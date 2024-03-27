@@ -6,4 +6,5 @@
     <string name="strInputWeight">輸入體重</string>
     <string name="StrShowbmi">"你的BMI : "</string>
     <string name="strGoNext">下一頁</string>
+    <string name="goBack">返回</string>
 </resources>

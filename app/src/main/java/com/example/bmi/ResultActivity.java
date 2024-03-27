@@ -3,6 +3,7 @@ package com.example.bmi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,5 +27,8 @@ public class ResultActivity extends AppCompatActivity {
             img.setImageResource(R.drawable.fat);
             //55556
         }
+    }
+    public void goBack(View view){
+        finish();
     }
 }

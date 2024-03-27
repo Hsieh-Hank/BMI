@@ -5,4 +5,5 @@
     <string name="strCalc">Calcutor</string>
     <string name="StrShowbmi">"Your Bmi : "</string>
     <string name="strGoNext" >GoNext</string>
+    <string name="goBack" >Goback</string>
 </resources>
