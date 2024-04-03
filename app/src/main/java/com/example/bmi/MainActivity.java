@@ -7,8 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.CheckBox;
 
 import java.text.DecimalFormat;
 
@@ -17,12 +21,56 @@ public class MainActivity extends AppCompatActivity {
     private TextView show;
     private EditText height;
     private EditText weight;
+    private RadioGroup RgSex;
+    private RadioButton RbMale;
+    private RadioButton RbFemale;
+    private CheckBox cbApple;
+    private CheckBox cbBanana;
+    private CheckBox cbOrange;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViews();
+
+        RgSex.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.RbMale) {
+                show.setText("男生");
+            } else {
+                show.setText("女生");
+            }
+        });
+
+        cbApple.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                getFruit();
+            }
+        });
+        cbBanana.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                getFruit();
+            }
+        });
+        cbOrange.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                getFruit();
+            }
+        });
+    }
+
+    private void getFruit() {
+        String msg = "";
+        if (cbApple.isChecked()) {
+            msg += "蘋果";
+        }
+        if (cbBanana.isChecked()) {
+            msg += "香蕉";
+        }
+        if (cbOrange.isChecked()) {
+            msg += "橘子";
+        }
+        show.setText("我喜歡" + msg);
     }
 
     public void calcMBI(View view) {
@@ -52,5 +100,9 @@ public class MainActivity extends AppCompatActivity {
         height = findViewById(R.id.etHeight);
         weight = findViewById(R.id.etWeight);
         show = findViewById(R.id.tvShow);
+        RgSex = findViewById(R.id.RgSex);
+        cbApple = findViewById(R.id.cbApple);
+        cbBanana = findViewById(R.id.cbBanana);
+        cbOrange = findViewById(R.id.cbOrange);
     }
 }

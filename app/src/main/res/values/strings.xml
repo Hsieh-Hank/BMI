@@ -6,4 +6,6 @@
     <string name="StrShowbmi">"Your Bmi : "</string>
     <string name="strGoNext" >GoNext</string>
     <string name="goBack" >Goback</string>
+    <string name="strMale">Male</string>
+    <string name="strFemale">Female</string>
 </resources>

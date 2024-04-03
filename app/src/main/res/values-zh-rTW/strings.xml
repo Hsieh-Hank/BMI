@@ -7,4 +7,6 @@
     <string name="StrShowbmi">"你的BMI : "</string>
     <string name="strGoNext">下一頁</string>
     <string name="goBack">返回</string>
+    <string name="strMale">男生</string>
+    <string name="strFemale">女生</string>
 </resources>
