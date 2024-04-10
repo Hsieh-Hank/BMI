@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         double bmi = getBmi();
         String result  = getString(R.string.StrShowbmi) + bmi;
         builder.setMessage(result);
+
         builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
