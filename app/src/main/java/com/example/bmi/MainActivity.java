@@ -30,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox cbApple;
     private CheckBox cbBanana;
     private CheckBox cbOrange;
+    private String[] sex = {"男生", "女生"};
+    private int sexSeclect = 0;
+    private  String[] fruits = {"蘋果", "香蕉", "橘子"};
+
+    private boolean[] fruitseclect = {false, false, false};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,18 +90,43 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle("BMI");
         double bmi = getBmi();
         String result  = getString(R.string.StrShowbmi) + bmi;
-        builder.setMessage(result);
+
+        //顯示訊息
+//        builder.setMessage(result);
+
+        //顯示單選
+//        builder.setSingleChoiceItems(sex, sexSeclect, new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                sexSeclect = which;
+//            }
+//        });
+//         顯示多選
+        builder.setMultiChoiceItems(fruits, fruitseclect, new DialogInterface.OnMultiChoiceClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                fruitseclect[which] = isChecked;
+            }
+        });
 
         builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(MainActivity.this, "Hi", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, sex[sexSeclect], Toast.LENGTH_LONG).show();
             }
         });
+
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(MainActivity.this, "Bye", Toast.LENGTH_LONG).show();
+                String msg = "";
+                for(int i = 0; i < fruitseclect.length; i++) {
+                    if (fruitseclect[i]) {
+                        msg += fruits[i];
+                    }
+                }
+
+                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
             }
         });
 
