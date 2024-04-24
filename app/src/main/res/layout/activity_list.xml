@@ -19,15 +19,14 @@
 
     <TextView
         android:id="@+id/tvShow1"
-        android:layout_width="105dp"
-        android:layout_height="45dp"
-        android:text="TextView"
+        android:layout_width="311dp"
+        android:layout_height="38dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.151" />
+        app:layout_constraintVertical_bias="0.155" />
 
     <ListView
         android:id="@+id/lvFruit"
