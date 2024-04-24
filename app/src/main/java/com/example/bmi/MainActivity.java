@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 getFruit();
             }
         });
+
         cbOrange.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 getFruit();
